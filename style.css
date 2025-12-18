@@ -121,7 +121,7 @@ body {
 /* ================= PROFIL ================= */
 .profil-img {
   width: min(650px, 85%); /* zmenšené cca o 10 % */
-  transform: translateY(-24px); /* posun vyššie */
+  transform: translateY(-10px); /* posun vyššie */
 }
 
 .profil-text {
