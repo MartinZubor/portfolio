@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* SCROLL SNAP */
+.snap {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.snap-item {
+  scroll-snap-align: start;
+}
+
+/* HERO */
+.hero {
+  height: 1024px;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  text-align: center;
+}
+
+.hero-logo {
+  width: 600px;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+/* CTA */
+.cta {
+  display: flex;
+  gap: 60px;
+}
+
+.cta a {
+  width: 260px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: black;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: 1px;
+
+  border-radius: 3px; /* ✅ CORNER RADIUS */
+
+  transition: background 0.3s, transform 0.3s;
+}
+
+.cta a:hover {
+  background: rgb(152, 102, 159);
+  transform: translateY(-4px);
+}
+
+/* HEADER */
+.page-header {
+  width: 100vw;
+  height: 90px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.page-header h2 {
+  color: white;
+  font-size: 34px;
+  letter-spacing: 4px;
+}
+
+.logo-small {
+  width: 45px;
+  position: absolute;
+  left: 40px;
+}
+
+/* PAGE CONTENT */
+.page-center {
+  height: calc(1024px - 90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+
+/* PROFIL */
+.profil-img {
+  width: 790px;
+  box-shadow: none;
+  border-radius: 3px; /* ✅ pre istotu konzistencia */
+}
+
+.profil-text {
+  max-width: 780px;
+  font-size: 23px;
+  line-height: 1.9;
+}
+
+/* WORKS */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  max-width: 1320px;
+}
+
+.work-item h3 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.work-item img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+
+  border-radius: 3px; /* ✅ CORNER RADIUS */
+  box-shadow: 22px 22px 45px rgba(0, 0, 0, 0.45);
+
+  transition: transform 0.4s, box-shadow 0.4s;
+  cursor: pointer;
+}
+
+.work-item img:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.55);
+}
+
+.frame img {
+  border: 2px solid black;
+}
+
+/* CONTACT */
+.mail {
+  font-size: 36px;
+}
+
+.socials {
+  display: flex;
+  gap: 80px;
+}
+
+.socials img {
+  width: 95px;
+  border-radius: 3px; /* ✅ CORNER RADIUS */
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.socials img:hover {
+  transform: scale(1.15);
+}
