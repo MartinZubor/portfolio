@@ -47,7 +47,7 @@ html {
 }
 
 .hero-logo {
-  width: min(600px, 90%);
+  width: min(500px, 90%);
 }
 
 .hero h1 {
@@ -121,7 +121,7 @@ html {
 
 /* PROFIL */
 .profil-img {
-  width: min(790px, 90%);
+  width: min(890px, 90%);
 }
 
 .profil-text {
