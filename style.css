@@ -1,37 +1,35 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* GLOBAL */
-html,
+/* ================= GLOBAL ================= */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* SCROLL SNAP */
+/* ================= SCROLL SNAP ================= */
 .snap {
-  min-height: 100vh;
-  overflow-y: auto;
+  height: 100vh;
+  overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
 
 .snap-item {
-  min-height: 100vh;
+  height: 100vh;
   scroll-snap-align: start;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
-  min-height: 100vh;
   max-width: 1440px;
   margin: auto;
   display: flex;
@@ -43,38 +41,41 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 36px;
   text-align: center;
 }
 
 .hero-logo {
-  width: min(370px, 80%); /* ⬇️ -15 % */
+  width: min(440px, 85%);
 }
 
 .hero h1 {
-  font-size: 38px; /* ⬇️ */
+  font-size: 44px;
   font-weight: 700;
+  letter-spacing: 2px;
 }
 
-/* CTA */
+/* ================= CTA ================= */
 .cta {
   display: flex;
-  gap: 48px;
+  gap: 60px;
 }
 
 .cta a {
-  width: 220px;
-  height: 60px;
+  width: 260px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
+
   background: black;
   color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 1px;
+
   border-radius: 3px;
-  transition: background 0.3s, transform 0.3s;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .cta a:hover {
@@ -82,10 +83,10 @@ html {
   transform: translateY(-4px);
 }
 
-/* HEADER */
+/* ================= PAGE HEADER ================= */
 .page-header {
   width: 100%;
-  height: 80px;
+  height: 90px;
   background: black;
   display: flex;
   justify-content: center;
@@ -95,91 +96,98 @@ html {
 
 .page-header h2 {
   color: white;
-  font-size: 30px;
+  font-size: 34px;
   letter-spacing: 4px;
+  font-weight: 700;
 }
 
 .logo-small {
-  width: 38px;
+  width: 45px;
   position: absolute;
   left: 40px;
 }
 
-/* PAGE CONTENT */
+/* ================= PAGE CONTENT ================= */
 .page-center {
-  min-height: calc(100vh - 80px);
+  height: calc(100vh - 90px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+  gap: 36px;
   text-align: center;
 }
 
-/* PROFIL */
+/* ================= PROFIL ================= */
 .profil-img {
-  width: min(610px, 80%); /* ⬇️ -15 % */
+  width: min(650px, 85%); /* zmenšené cca o 10 % */
+  transform: translateY(-24px); /* posun vyššie */
 }
 
 .profil-text {
-  max-width: 680px;
-  font-size: 20px;
-  line-height: 1.75;
+  max-width: 760px;
+  font-size: 22px;
+  line-height: 1.85;
+  font-weight: 400;
+  transform: translateY(-24px); /* posun spolu s obrázkom */
 }
 
-/* WORKS */
+/* ================= WORKS ================= */
 .works-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 64px;
-  max-width: 1200px;
+  gap: 80px;
+  max-width: 1320px;
 }
 
 .work-item h3 {
-  font-size: 24px;
-  margin-bottom: 24px;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 400;
 }
 
 .work-item img {
   width: 100%;
-  height: 440px;
+  height: 520px;
   object-fit: cover;
   border-radius: 3px;
-  box-shadow: 18px 18px 40px rgba(0, 0, 0, 0.45);
-  transition: transform 0.4s, box-shadow 0.4s;
+  box-shadow: 22px 22px 45px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
 }
 
 .work-item img:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 26px 26px 55px rgba(0, 0, 0, 0.55);
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.55);
 }
 
 .frame img {
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 .mail {
-  font-size: 30px;
+  font-size: 34px;
+  font-weight: 400;
 }
 
 .socials {
   display: flex;
-  gap: 64px;
+  gap: 80px;
 }
 
 .socials img {
-  width: 80px;
+  width: 90px;
   border-radius: 3px;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .socials img:hover {
-  transform: scale(1.12);
+  transform: scale(1.15);
 }
 
-/* IMG FIX */
+/* ================= IMG FIX ================= */
 img {
   max-width: 100%;
   height: auto;
