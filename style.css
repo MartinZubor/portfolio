@@ -1,7 +1,15 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* GLOBAL */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
   font-family: "Roboto", sans-serif;
 }
 
@@ -22,7 +30,7 @@ html {
 
 /* HERO */
 .hero {
-  height: 1024px;
+  min-height: 100vh;
   max-width: 1440px;
   margin: auto;
   display: flex;
@@ -39,11 +47,12 @@ html {
 }
 
 .hero-logo {
-  width: 600px;
+  width: min(600px, 90%);
 }
 
 .hero h1 {
   font-size: 48px;
+  font-weight: 700;
 }
 
 /* CTA */
@@ -64,9 +73,9 @@ html {
   text-decoration: none;
   font-size: 20px;
   letter-spacing: 1px;
+  font-weight: 400;
 
-  border-radius: 3px; /* ✅ CORNER RADIUS */
-
+  border-radius: 3px;
   transition: background 0.3s, transform 0.3s;
 }
 
@@ -77,7 +86,7 @@ html {
 
 /* HEADER */
 .page-header {
-  width: 100vw;
+  width: 100%;
   height: 90px;
   background: black;
   display: flex;
@@ -90,6 +99,7 @@ html {
   color: white;
   font-size: 34px;
   letter-spacing: 4px;
+  font-weight: 700;
 }
 
 .logo-small {
@@ -100,7 +110,7 @@ html {
 
 /* PAGE CONTENT */
 .page-center {
-  height: calc(1024px - 90px);
+  min-height: calc(100vh - 90px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,15 +121,14 @@ html {
 
 /* PROFIL */
 .profil-img {
-  width: 790px;
-  box-shadow: none;
-  border-radius: 3px; /* ✅ pre istotu konzistencia */
+  width: min(790px, 90%);
 }
 
 .profil-text {
   max-width: 780px;
   font-size: 23px;
   line-height: 1.9;
+  font-weight: 400;
 }
 
 /* WORKS */
@@ -133,16 +142,15 @@ html {
 .work-item h3 {
   font-size: 28px;
   margin-bottom: 30px;
+  font-weight: 400;
 }
 
 .work-item img {
   width: 100%;
   height: 520px;
   object-fit: cover;
-
-  border-radius: 3px; /* ✅ CORNER RADIUS */
+  border-radius: 3px;
   box-shadow: 22px 22px 45px rgba(0, 0, 0, 0.45);
-
   transition: transform 0.4s, box-shadow 0.4s;
   cursor: pointer;
 }
@@ -159,6 +167,7 @@ html {
 /* CONTACT */
 .mail {
   font-size: 36px;
+  font-weight: 400;
 }
 
 .socials {
@@ -168,11 +177,17 @@ html {
 
 .socials img {
   width: 95px;
-  border-radius: 3px; /* ✅ CORNER RADIUS */
+  border-radius: 3px;
   transition: transform 0.3s;
   cursor: pointer;
 }
 
 .socials img:hover {
   transform: scale(1.15);
+}
+
+/* IMG FIX */
+img {
+  max-width: 100%;
+  height: auto;
 }
