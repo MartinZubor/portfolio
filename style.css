@@ -120,8 +120,8 @@ body {
 
 /* ================= PROFIL ================= */
 .profil-img {
-  width: min(650px, 85%); /* zmenšené cca o 10 % */
-  transform: translateY(-10px); /* posun vyššie */
+  width: min(650px, 85%);
+  transform: translateY(-10px);
 }
 
 .profil-text {
@@ -129,7 +129,7 @@ body {
   font-size: 22px;
   line-height: 1.85;
   font-weight: 400;
-  transform: translateY(-24px); /* posun spolu s obrázkom */
+  transform: translateY(-24px);
 }
 
 /* ================= WORKS ================= */
@@ -186,8 +186,24 @@ body {
 .socials img:hover {
   transform: scale(1.15);
 }
+/* ================= CONTACT TEXT ================= */
+.contact-text {
+  margin-top: 50px;
+  margin-bottom: 80px;
 
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  line-height: 1.3;
+
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
 /* ================= IMG FIX ================= */
+#contact .mail,
+#contact .socials {
+  transform: translateY(64px);
+}
 img {
   max-width: 100%;
   height: auto;
