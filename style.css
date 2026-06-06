@@ -67,13 +67,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   background: black;
   color: white;
   text-decoration: none;
   font-size: 20px;
   letter-spacing: 1px;
-
   border-radius: 3px;
   transition: 0.3s ease;
 }
@@ -87,20 +85,14 @@ body {
 .page-header {
   width: 100%;
   height: 90px;
-
   background: rgba(0, 0, 0, 0.85);
-
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
@@ -118,6 +110,7 @@ body {
 
 /* ================= PAGE CENTER ================= */
 .page-center {
+  width: 100%;
   height: calc(100vh - 88px);
   display: flex;
   flex-direction: column;
@@ -125,9 +118,6 @@ body {
   align-items: center;
   gap: 36px;
   text-align: center;
-}
-.page-center {
-  width: 100%;
   padding: 0 20px;
 }
 
@@ -143,14 +133,7 @@ body {
   font-size: 18px;
   font-weight: 500;
 }
-/* spacing medzi odsekmi */
-.profil-box p {
-  margin: 0 0 16px 0;
-}
 
-.profil-box p:last-child {
-  margin-bottom: 0;
-}
 /* ================= WORKS ================= */
 #works .page-center {
   justify-content: flex-start;
@@ -195,21 +178,16 @@ body {
   box-shadow: 24px 24px 45px rgba(0, 0, 0, 0.45);
 }
 
-/* ===== OVERLAY ===== */
-
+/* OVERLAY */
 .overlay {
   position: absolute;
   inset: 0;
-
   background: rgba(0, 0, 0, 0.65);
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   opacity: 0;
   transition: 0.3s ease;
-
   pointer-events: none;
 }
 
@@ -239,8 +217,6 @@ body {
 .socials {
   display: flex;
   gap: 60px;
-  justify-content: center;
-  align-items: center;
 }
 
 .socials img {
@@ -252,7 +228,7 @@ body {
   transform: scale(1.2);
 }
 
-/* ================= LIGHTBOX (GALÉRIA) ================= */
+/* ================= LIGHTBOX ================= */
 .lightbox {
   display: none;
   position: fixed;
@@ -302,8 +278,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* ================= SCROLL ANIMATIONS ================= */
-
+/* ================= ANIMATIONS ================= */
 .fade-up {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -314,7 +289,6 @@ body {
 }
 
 /* ================= HERO ANIMATIONS ================= */
-
 .hero-logo {
   animation: fadeIn 1.2s ease;
 }
@@ -331,7 +305,6 @@ body {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -342,14 +315,13 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-/* ================= RESPONSIVE ================= */
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .works-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -368,12 +340,13 @@ body {
     height: 60px;
     font-size: 18px;
   }
-  @media (max-width: 768px) {
-    .snap {
-      scroll-snap-type: none;
-    }
+}
+
+@media (max-width: 768px) {
+  .snap {
+    scroll-snap-type: none;
   }
-  /* HERO */
+
   .hero h1 {
     font-size: 34px;
   }
@@ -387,7 +360,6 @@ body {
     width: 80vw;
   }
 
-  /* HEADER */
   .page-header h2 {
     font-size: 22px;
   }
@@ -397,13 +369,11 @@ body {
     width: 35px;
   }
 
-  /* PROFIL */
   .profil-text {
     padding: 0 20px;
     font-size: 15px;
   }
 
-  /* WORKS */
   .works-grid {
     grid-template-columns: 1fr;
     gap: 25px;
@@ -413,7 +383,6 @@ body {
     height: 220px;
   }
 
-  /* CONTACT */
   .contact-text,
   .mail {
     font-size: 20px;
