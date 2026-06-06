@@ -192,9 +192,10 @@ I work as a freelancer using Adobe tools and Procreate, combining traditional dr
     </div>
 
     <!-- JS (ONLY FIX HERE) -->
-   <script>
+  <script>
 document.addEventListener("DOMContentLoaded", () => {
 
+  /* ================= FADE IN ================= */
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -210,6 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
   });
 
+  /* ================= GALLERIES ================= */
   const galleries = {
     illustration: [
       "images/work1.jpg",
@@ -271,43 +273,102 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const lightbox = document.getElementById("lightbox");
   const img = document.getElementById("lightbox-img");
+  const caption = document.getElementById("lightbox-caption");
 
+  /* ================= RENDER ================= */
   function updateMedia() {
     const item = currentGallery[currentIndex];
 
     const src = typeof item === "string" ? item : item.src;
-    const caption = typeof item === "string" ? "" : item.title;
+    const title = typeof item === "string" ? "" : item.title;
 
-    document.getElementById("lightbox-caption").textContent = caption;
+    caption.textContent = title || "";
+
+    const video = document.getElementById("lightbox-video");
 
     if (src.endsWith(".mp4")) {
       img.style.display = "none";
 
-      let video = document.getElementById("lightbox-video");
-
       if (!video) {
-        video = document.createElement("video");
-        video.id = "lightbox-video";
-        video.controls = true;
-        video.autoplay = true;
-        video.style.maxWidth = "80%";
-        video.style.maxHeight = "80%";
-        lightbox.insertBefore(video, img);
+        const newVideo = document.createElement("video");
+        newVideo.id = "lightbox-video";
+        newVideo.controls = true;
+        newVideo.autoplay = true;
+        newVideo.style.maxWidth = "80%";
+        newVideo.style.maxHeight = "80%";
+        lightbox.insertBefore(newVideo, img);
       }
 
-      video.src = src;
+      document.getElementById("lightbox-video").src = src;
 
     } else {
       img.style.display = "block";
+      img.src = src;
 
-      const video = document.getElementById("lightbox-video");
       if (video) {
         video.pause();
         video.remove();
       }
-
-      img.src = src;
     }
+  }
+
+  function openLightbox() {
+    lightbox.style.display = "flex";
+    updateMedia();
+  }
+
+  /* ================= CLICK OPEN (FIXED) ================= */
+  document.querySelectorAll(".gallery-trigger").forEach((el) => {
+    el.addEventListener("click", () => {
+
+      const key = el.dataset.gallery;
+      currentGallery = galleries[key];
+
+      if (!currentGallery) return;
+
+      // 🔥 STABILNÝ INDEX (NEZÁVISLÝ OD src!)
+      const items = Array.from(
+        document.querySelectorAll(`.gallery-trigger[data-gallery="${key}"]`)
+      );
+
+      currentIndex = items.indexOf(el);
+
+      if (currentIndex < 0) currentIndex = 0;
+
+      openLightbox();
+    });
+  });
+
+  /* ================= NAV ================= */
+  document.getElementById("next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    updateMedia();
+  });
+
+  document.getElementById("prev").addEventListener("click", () => {
+    currentIndex =
+      (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    updateMedia();
+  });
+
+  /* ================= CLOSE ================= */
+  function closeLightbox() {
+    const video = document.getElementById("lightbox-video");
+    if (video) {
+      video.pause();
+      video.remove();
+    }
+    lightbox.style.display = "none";
+  }
+
+  document.querySelector(".close").addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+});
+</script>
   }
 
   function openLightbox() {
