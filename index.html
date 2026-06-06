@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sk">
   <head>
     <meta charset="UTF-8" />
     <title>Graphic Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,13 +14,15 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <main class="snap">
       <!-- HERO -->
       <section class="hero snap-item">
         <div class="hero-center">
           <img src="images/logo.png" class="hero-logo" alt="Logo" />
-          <h1>GRAPHIC PORTFOLIO</h1>
+          <h1>MARTIN 
+            ŽÚBOR</h1>
 
           <div class="cta">
             <a href="#profil">PROFIL</a>
@@ -32,7 +33,7 @@
       </section>
 
       <!-- PROFIL -->
-      <section id="profil" class="page snap-item">
+      <section id="profil" class="page snap-item fade-up">
         <header class="page-header">
           <img src="images/logomale.png" class="logo-small" alt="Logo small" />
           <h2>PROFIL</h2>
@@ -40,20 +41,19 @@
 
         <div class="page-center">
           <img src="images/profil.png" class="profil-img" alt="Profil" />
+
           <p class="profil-text">
-            I graduated from an Art high school in the field of painting where
-            we approached the techniques of old masters as well as digital
-            creation. Later on, I graduated from Matej Bel University in Banská
-            Bystrica with a Master degree in Teaching Fine Arts and Psychology.
-            I focus mainly on illustration, comics and storytelling. I work with
-            Adobe Photoshop, Illustrator, InDesign and Procreate. I currently
-            work as a freelancer.
+            I studied traditional painting at an art high school, focusing on old master techniques and developing a strong foundation in drawing and visual storytelling. I later graduated from Matej Bel University <br>in Banská Bystrica.
+
+My work focuses on illustration, comics, and narrative-driven visuals. I enjoy building stories through composition, emotion, and atmosphere.
+
+I work as a freelancer using Adobe tools and Procreate, combining traditional drawing thinking with digital workflows.
           </p>
         </div>
       </section>
 
       <!-- WORKS -->
-      <section id="works" class="page snap-item">
+      <section id="works" class="page snap-item fade-up">
         <header class="page-header">
           <img src="images/logomale.png" class="logo-small" alt="Logo small" />
           <h2>WORKS</h2>
@@ -61,46 +61,116 @@
 
         <div class="page-center">
           <div class="works-grid">
+            <!-- Illustration -->
             <div class="work-item">
-              <h3>Illustration</h3>
-              <a href="images/work1.jpg" target="_blank">
-                <img src="images/work1.jpg" alt="Illustration" />
-              </a>
+  <h3>Illustration</h3>
+
+  <img
+    src="images/work1.jpg"
+    alt="Illustration"
+    class="gallery-trigger"
+    data-gallery="illustration"
+  />
+
+  <div class="overlay">
+    <span>Click to view</span>
+  </div>
+</div>
+
+            <!-- Animation -->
+            <div class="work-item">
+  <h3>Animation</h3>
+
+  <img
+    src="images/work3.gif"
+    alt="Animation"
+    class="gallery-trigger"
+    data-gallery="animation"
+  />
+
+  <div class="overlay">
+    <span>Click to view</span>
+  </div>
+</div>
+
+            <!-- ✅ COMICS FIXED -->
+            <div class="work-item">
+  <h3>Comics</h3>
+
+  <img
+    src="images/work4.jpg"
+    alt="Comics"
+    class="gallery-trigger"
+    data-gallery="comics"
+    data-start="0"
+  />
+
+  <div class="overlay">
+    <span>Click to view</span>
+  </div>
+</div>
+
+            <div class="work-item">
+              <h3>Brand Design</h3>
+
+              <img
+                src="images/work6.jpg"
+                alt="Brand Design"
+                class="gallery-trigger"
+                data-gallery="branddesign"
+              /><div class="overlay">
+  <span>Click to view</span>
+</div>
             </div>
 
-            <div class="work-item frame">
-              <h3>Comics</h3>
-              <a href="images/work4.png" target="_blank">
-                <img src="images/work2.jpg" alt="Comics" />
-              </a>
+            <div class="work-item">
+              <h3>Publications</h3>
+
+              <img
+                src="images/work13.jpg"
+                alt="Publications"
+                class="gallery-trigger"
+                data-gallery="publications"
+              /><div class="overlay">
+  <span>Click to view</span>
+</div>
             </div>
 
-            <div class="work-item">
-              <h3>Animation</h3>
-              <a href="images/work3.gif" target="_blank">
-                <img src="images/work3.gif" alt="Animation" />
-              </a>
-            </div>
-          </div>
-        </div>
+           <div class="work-item">
+  <h3>Other Projects</h3>
+
+  <img
+    src="images/work19.jpg"
+    alt="Other Projects"
+    class="gallery-trigger"
+    data-gallery="otherprojects"
+  />
+
+  <div class="overlay">
+    <span>Click to view</span>
+  </div>
+</div>
       </section>
 
       <!-- CONTACT -->
-      <section id="contact" class="page snap-item">
+      <section id="contact" class="page snap-item fade-up">
         <header class="page-header">
           <img src="images/logomale.png" class="logo-small" alt="Logo small" />
           <h2>CONTACT</h2>
         </header>
+
         <div class="page-center">
           <p class="contact-text">
             NEED ILLUSTRATIONS THAT TELL A STORY? GET IN TOUCH!
           </p>
+
           <p class="mail">zubor.martin@gmail.com</p>
 
           <div class="socials">
             <a href="https://www.instagram.com/zubormartin/" target="_blank">
               <img src="images/instagram.png" alt="Instagram" />
             </a>
+
             <a href="https://www.artstation.com/zubor" target="_blank">
               <img src="images/artstation.png" alt="ArtStation" />
             </a>
@@ -108,5 +178,202 @@
         </div>
       </section>
     </main>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+     <img id="lightbox-img" src="" alt="Gallery" />
+<p id="lightbox-caption"></p>
+
+      <div class="nav">
+        <button id="prev">&#10094;</button>
+        <button id="next">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- JS (ONLY FIX HERE) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  {
+    threshold: 0.2
+  }
+);
+
+document.querySelectorAll(".fade-up").forEach((el) => {
+  observer.observe(el);
+});
+        const galleries = {
+          illustration: [
+            "images/work1.jpg",
+            "images/work35.jpg",
+            "images/work36.jpg",
+            "images/work39.jpg",
+            "images/work26.jpg",
+          ],
+
+          animation: [
+            "images/work3.gif",
+            "images/work38.gif",
+            "images/work31.mp4",
+            "images/work37.mp4",
+          ],
+
+          comics: [
+            "images/work4.jpg",
+            "images/work41.jpg",
+            "images/work40.jpg",
+            "images/work32.jpg",
+          ],
+          branddesign: [
+            "images/work6.jpg",
+            "images/work8.jpg",
+            "images/work9.jpg",
+            "images/work10.jpg",
+            "images/work11.jpg",
+          ],
+          publications: [
+            "images/work13.jpg",
+            "images/work12.jpg",
+            "images/work42.jpg",
+            "images/work14.jpg",
+            "images/work15.jpg",
+          ],
+          otherprojects: [
+  { src: "images/work19.jpg", title: "" },
+  { src: "images/work18.jpg", title: "" },
+  { src: "images/work21.jpg", title: "Hero" },
+  { src: "images/work33.jpg", title: "Post" },
+  { src: "images/work43.jpg", title: "Post" },
+  { src: "images/work45.jpg", title: "Web Banner" },
+  { src: "images/work16.jpg", title: "T-shirt Design" },
+  { src: "images/work17.jpg", title: "T-shirt Design" },
+  { src: "images/work20.jpg", title: "Slot Game Design" },
+  { src: "images/work24.jpg", title: "Slot Game Design" },
+  { src: "images/work22.jpg", title: "Slot Game Design" },
+  { src: "images/work29.jpg", title: "Slot Game Design" },
+  { src: "images/work23.jpg", title: "Slot Game Design" },
+],
+        };
+
+        let currentGallery = [];
+        let currentIndex = 0;
+
+        const lightbox = document.getElementById("lightbox");
+        const img = document.getElementById("lightbox-img");
+
+        function updateMedia() {
+  const item = currentGallery[currentIndex];
+
+  const src =
+    typeof item === "string"
+      ? item
+      : item.src;
+
+  const caption =
+    typeof item === "string"
+      ? ""
+      : item.title;
+
+  document.getElementById("lightbox-caption").textContent =
+    caption;
+
+          if (src.endsWith(".mp4")) {
+            img.style.display = "none";
+
+            let video = document.getElementById("lightbox-video");
+
+            if (!video) {
+              video = document.createElement("video");
+              video.id = "lightbox-video";
+              video.controls = true;
+              video.autoplay = true;
+              video.style.maxWidth = "80%";
+              video.style.maxHeight = "80%";
+              lightbox.insertBefore(video, img);
+            }
+
+            video.src = src;
+          } else {
+            img.style.display = "block";
+
+            const video = document.getElementById("lightbox-video");
+            if (video) {
+              video.pause();
+              video.src = "";
+              video.remove();
+            }
+
+            img.src = src;
+          }
+        }
+
+        function openLightbox() {
+          lightbox.style.display = "flex";
+          updateMedia();
+        }
+
+        document.querySelectorAll(".gallery-trigger").forEach((el) => {
+          el.addEventListener("click", () => {
+            const key = el.dataset.gallery;
+            if (!galleries[key]) return;
+
+            currentGallery = galleries[key];
+
+            // ✅ COMICS ALWAYS STARTS AT WORK4
+            if (key === "comics") {
+              currentIndex = 0;
+            } else {
+              const src = el.getAttribute("src");
+              currentIndex = currentGallery.indexOf(src);
+              if (currentIndex === -1) currentIndex = 0;
+            }
+
+            openLightbox();
+          });
+        });
+
+        document.getElementById("next").addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % currentGallery.length;
+          updateMedia();
+        });
+
+        document.getElementById("prev").addEventListener("click", () => {
+          currentIndex =
+            (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+          updateMedia();
+        });
+
+        document.querySelector(".close").addEventListener("click", () => {
+          const video = document.getElementById("lightbox-video");
+          if (video) {
+            video.pause();
+            video.src = "";
+            video.remove();
+          }
+
+          lightbox.style.display = "none";
+        });
+
+        lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox) {
+            const video = document.getElementById("lightbox-video");
+            if (video) {
+              video.pause();
+              video.src = "";
+              video.remove();
+            }
+
+            lightbox.style.display = "none";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
