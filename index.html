@@ -150,52 +150,15 @@ I work as a freelancer using Adobe tools and Procreate, combining traditional dr
     <span>Click to view</span>
   </div>
 </div>
-      </section>
 
-      <!-- CONTACT -->
-      <section id="contact" class="page snap-item fade-up">
-        <header class="page-header">
-          <img src="images/logomale.png" class="logo-small" alt="Logo small" />
-          <h2>CONTACT</h2>
-        </header>
-
-        <div class="page-center">
-          <p class="contact-text">
-            NEED ILLUSTRATIONS THAT TELL A STORY? GET IN TOUCH!
-          </p>
-
-          <p class="mail">zubor.martin@gmail.com</p>
-
-          <div class="socials">
-            <a href="https://www.instagram.com/zubormartin/" target="_blank">
-              <img src="images/instagram.png" alt="Instagram" />
-            </a>
-
-            <a href="https://www.artstation.com/zubor" target="_blank">
-              <img src="images/artstation.png" alt="ArtStation" />
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- LIGHTBOX -->
-    <div id="lightbox" class="lightbox">
-      <span class="close">&times;</span>
-     <img id="lightbox-img" src="" alt="Gallery" />
-<p id="lightbox-caption"></p>
-
-      <div class="nav">
-        <button id="prev">&#10094;</button>
-        <button id="next">&#10095;</button>
-      </div>
-    </div>
+</div> 
+</div> 
+</section>
 
     <!-- JS (ONLY FIX HERE) -->
-  <script>
+   <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ================= FADE IN ================= */
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -211,7 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
   });
 
-  /* ================= GALLERIES ================= */
   const galleries = {
     illustration: [
       "images/work1.jpg",
@@ -275,40 +237,51 @@ document.addEventListener("DOMContentLoaded", () => {
   const img = document.getElementById("lightbox-img");
   const caption = document.getElementById("lightbox-caption");
 
-  /* ================= RENDER ================= */
   function updateMedia() {
+
     const item = currentGallery[currentIndex];
 
-    const src = typeof item === "string" ? item : item.src;
-    const title = typeof item === "string" ? "" : item.title;
+    const src =
+      typeof item === "string"
+        ? item
+        : item.src;
 
-    caption.textContent = title || "";
+    const text =
+      typeof item === "string"
+        ? ""
+        : item.title;
 
-    const video = document.getElementById("lightbox-video");
+    caption.textContent = text;
+
+    const oldVideo = document.getElementById("lightbox-video");
+
+    if (oldVideo) {
+      oldVideo.pause();
+      oldVideo.remove();
+    }
 
     if (src.endsWith(".mp4")) {
+
       img.style.display = "none";
 
-      if (!video) {
-        const newVideo = document.createElement("video");
-        newVideo.id = "lightbox-video";
-        newVideo.controls = true;
-        newVideo.autoplay = true;
-        newVideo.style.maxWidth = "80%";
-        newVideo.style.maxHeight = "80%";
-        lightbox.insertBefore(newVideo, img);
-      }
+      const video = document.createElement("video");
 
-      document.getElementById("lightbox-video").src = src;
+      video.id = "lightbox-video";
+      video.controls = true;
+      video.autoplay = true;
+
+      video.style.maxWidth = "80%";
+      video.style.maxHeight = "80%";
+
+      video.src = src;
+
+      lightbox.insertBefore(video, caption);
 
     } else {
+
       img.style.display = "block";
       img.src = src;
 
-      if (video) {
-        video.pause();
-        video.remove();
-      }
     }
   }
 
@@ -317,135 +290,64 @@ document.addEventListener("DOMContentLoaded", () => {
     updateMedia();
   }
 
-  /* ================= CLICK OPEN (FIXED) ================= */
   document.querySelectorAll(".gallery-trigger").forEach((el) => {
+
     el.addEventListener("click", () => {
 
       const key = el.dataset.gallery;
+
+      if (!galleries[key]) return;
+
       currentGallery = galleries[key];
 
-      if (!currentGallery) return;
-
-      // 🔥 STABILNÝ INDEX (NEZÁVISLÝ OD src!)
-      const items = Array.from(
-        document.querySelectorAll(`.gallery-trigger[data-gallery="${key}"]`)
-      );
-
-      currentIndex = items.indexOf(el);
-
-      if (currentIndex < 0) currentIndex = 0;
+      currentIndex = 0;
 
       openLightbox();
+
     });
+
   });
 
-  /* ================= NAV ================= */
   document.getElementById("next").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % currentGallery.length;
+
+    currentIndex =
+      (currentIndex + 1) % currentGallery.length;
+
     updateMedia();
+
   });
 
   document.getElementById("prev").addEventListener("click", () => {
+
     currentIndex =
-      (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+      (currentIndex - 1 + currentGallery.length) %
+      currentGallery.length;
+
     updateMedia();
+
   });
 
-  /* ================= CLOSE ================= */
   function closeLightbox() {
+
     const video = document.getElementById("lightbox-video");
+
     if (video) {
       video.pause();
       video.remove();
     }
+
     lightbox.style.display = "none";
   }
 
   document.querySelector(".close").addEventListener("click", closeLightbox);
 
   lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-});
-</script>
-  }
-
-  function openLightbox() {
-    lightbox.style.display = "flex";
-    updateMedia();
-  }
-
-  document.querySelectorAll(".gallery-trigger").forEach((el) => {
-  el.addEventListener("click", () => {
-
-    const key = el.dataset.gallery;
-    if (!galleries[key]) return;
-
-    currentGallery = galleries[key];
-
-    const galleryElements = Array.from(
-      document.querySelectorAll(`.gallery-trigger[data-gallery="${key}"]`)
-    );
-
-    const clickedIndex = galleryElements.indexOf(el);
-
-    currentIndex = clickedIndex >= 0 ? clickedIndex : 0;
-
-    openLightbox();
-  });
-});
-    el.addEventListener("click", () => {
-
-      const key = el.dataset.gallery;
-      if (!galleries[key]) return;
-
-      currentGallery = galleries[key];
-
-      const src = el.getAttribute("src");
-
-      // 🔥 FIX: správne nájdenie indexu (funguje aj pre objekty)
-      currentIndex = currentGallery.findIndex(item => {
-        if (typeof item === "string") return item === src;
-        return item.src === src;
-      });
-
-      if (currentIndex === -1) currentIndex = 0;
-
-      openLightbox();
-    });
-  });
-
-  document.getElementById("next").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % currentGallery.length;
-    updateMedia();
-  });
-
-  document.getElementById("prev").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-    updateMedia();
-  });
-
-  document.querySelector(".close").addEventListener("click", () => {
-    const video = document.getElementById("lightbox-video");
-    if (video) {
-      video.pause();
-      video.remove();
-    }
-    lightbox.style.display = "none";
-  });
-
-  lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) {
-      const video = document.getElementById("lightbox-video");
-      if (video) {
-        video.pause();
-        video.remove();
-      }
-      lightbox.style.display = "none";
+      closeLightbox();
     }
   });
-;
+
+});
 </script>
   </body>
 </html>
