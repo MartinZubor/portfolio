@@ -415,3 +415,32 @@ body {
     }
   }
 }
+@media (max-width: 768px) {
+  /* WORKS fix */
+  #works.snap-item {
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  #works .page-center {
+    height: auto;
+    padding-bottom: 60px;
+  }
+
+  /* CONTACT fix */
+  #contact.snap-item {
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  #contact .page-center {
+    height: auto;
+    padding-bottom: 60px;
+  }
+
+  /* GLOBAL mobile fix */
+  .page-center {
+    height: auto;
+    min-height: auto;
+  }
+}
