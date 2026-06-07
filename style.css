@@ -18,9 +18,13 @@ body {
 
 /* ================= SCROLL SNAP ================= */
 .snap {
-  height: 100vh;
-  overflow-y: scroll;
+  height: 100dvh;
+  overflow-y: auto;
   scroll-snap-type: y mandatory;
+}
+
+.snap-item {
+  height: 100dvh;
 }
 
 .snap-item {
@@ -395,5 +399,19 @@ body {
 
   .socials img {
     width: 50px;
+  }
+  @media (max-width: 768px) {
+    .snap {
+      scroll-snap-type: none;
+    }
+
+    .snap-item {
+      height: auto;
+      min-height: 100dvh;
+    }
+
+    .page-center {
+      min-height: auto;
+    }
   }
 }
